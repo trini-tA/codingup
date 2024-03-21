@@ -9,7 +9,7 @@ class codingup2023 extends Controller
     public function index(Request $request){
 
         $this->C23_Sudokteur();
-        //$this->C23_NomsEspeces();
+        $this->C23_NomsEspeces();
 
         dd('2023');
     }
@@ -110,9 +110,9 @@ class codingup2023 extends Controller
                 $value = $value . $key;
             }
         }
-        dump( $max );
-        dump( $point, $result );
-        dump( $value, strlen( $value ) );
+        //dump( $max );
+        //dump( $point, $result );
+        dump( 'C23_Sudokteur :'. $value );
     }
 
     // https://pydefis.callicode.fr/defis/C23_NomsEspeces/txt
@@ -182,12 +182,12 @@ class codingup2023 extends Controller
             return $a['order'] <=> $b['order'];
         });
         $names_order = array_slice($names_order, 0, 10, true );
-        dump( $names_order );
+        //dump( $names_order );
         $list = [];
         foreach( $names_order as $name ){
             $list[] = $name['name'];
         }
-        dump( implode(',', $list) );
+        dump( 'C23_NomsEspeces '. implode(',', $list) );
     }
 
 }
